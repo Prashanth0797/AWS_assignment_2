@@ -1,0 +1,12 @@
+1. Create 2 EC2 instances.
+2. Let them be source_ec2 and dest_ec2
+3. Login in to source_ec2 using ssh.
+4. In this machine execute this command to create new private and public key
+    "ssh-keygen –t rsa"
+5. This creates the public key id_rsa.pub, and the private key id_rsa when the destination address is given /home/ec2-user/.ssh/id_rsa
+6. Got to this destination and open the public key using the command cat ida_rsa.
+7. Save the public key.
+8. Open the dest_ec2 and move to .ssh file and save the public key in the authorized key file.
+9. Now ssh the dest_ec2 from the source_ec2.
+
+

@@ -1,0 +1,18 @@
+1.  aws ec2 create-vpc --cidr-block 10.240.0.0/22
+2.  aws ec2 create-subnet --vpc-id vpc-0b345455528133887 --cidr-block 10.240.0.0/24 --region us-east-1 --availability-zone us-east-1a
+3.  aws ec2 create-subnet --vpc-id vpc-0b345455528133887 --cidr-block 10.240.1.0/24 --region us-east-1 --availability-zone us-east-1a
+4.  aws ec2 create-subnet --vpc-id vpc-0b345455528133887 --cidr-block 10.240.2.0/25 --region us-east-1 --availability-zone us-east-1a
+5.  aws ec2 create-subnet --vpc-id vpc-0b345455528133887 --cidr-block 10.240.2.128/25 --region us-east-1 --availability-zone us-east-1a
+6.  aws ec2 create-subnet --vpc-id vpc-0b345455528133887 --cidr-block 10.240.3.0/25 --region us-east-1 --availability-zone us-east-1a
+7.  aws ec2 create-subnet --vpc-id vpc-0b345455528133887 --cidr-block 10.240.3.128/25 --region us-east-1 --availability-zone us-east-1a
+8.  aws ec2 create-internet-gateway
+9.  aws ec2 attach-internet-gateway --vpc-id vpc-0b345455528133887 --internet-gateway-id igw-08505bc19883eeba1
+10. aws ec2 create-route-table --vpc-id vpc-0b345455528133887
+11. aws ec2 create-route --route-table-id rtb-0e05f0d8127e484a8 --destination-cidr-block 0.0.0.0/0 --gateway-id igw-08505bc19883eeba1
+12. aws ec2 associate-route-table  --subnet-id subnet-00b6e200e7cba18dd --route-table-id rtb-0e05f0d8127e484a8  (attaching to public subnet)
+13. aws ec2 associate-route-table  --subnet-id subnet-0e2384a6ffc268b18 --route-table-id rtb-0e05f0d8127e484a8  (attaching to public subnet)
+14. aws ec2 associate-route-table  --subnet-id subnet-0e2384a6ffc268b18 --route-table-id rtb-0e05f0d8127e484a8  (attaching to public subnet)
+15. aws ec2 create-security-group --group-name prashanth_sg --description "Security group for SSH access" --vpc-id vpc-0b345455528133887
+16. aws ec2 authorize-security-group-ingress --group-id sg-005945efeea50a934 --protocol tcp --port 22 --cidr 0.0.0.0/0
+
+
