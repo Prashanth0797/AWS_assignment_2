@@ -1,0 +1,2 @@
+Since pillow is not present in the lambda packages. We need to create a layer with pillow installed in it with the right
+packages in the right directories
